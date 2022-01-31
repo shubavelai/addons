@@ -17,13 +17,13 @@
     }
 
 // Save the SQL script to a backup file
-    $backup_file_name = 'iBank_backup_' .date('dmY'). '.bkup';
+    $backup_file_name = 'bkup_file_name.xtn';
     $fileHandler = fopen($backup_file_name, 'w+');
     $number_of_lines = fwrite($fileHandler, $data);
     fclose($fileHandler);
 
 // Move saved back file into folder
-    $path = "bkups/".$backup_file_name;
+    $path = "destination/folder/".$backup_file_name;
     if (copy($backup_file_name,$path)) 
     {
       unlink($backup_file_name);
